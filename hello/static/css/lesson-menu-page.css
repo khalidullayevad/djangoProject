@@ -31,19 +31,25 @@
     display: grid;
     grid-template-columns: auto;
 }
-
-.iframe {
-    width: 1000px;
-    height: 700px;
+.ls-menu {
+    border: solid #CBC8C8;
+    border-radius: 5px;
+    padding: 10px;
+}
+.course-img {
+     background-image: url('https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp');
+     height: 200px;
+     border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.course-title {
+    text-align: center; padding-top: 10%
 }
 
 
 
 @media only screen and (max-width: 1024px) {
-    iframe {
-        width: 700px;
-        height: 400px;
-    }
+
     .main-content{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -75,10 +81,7 @@
         display: grid;
         grid-template-columns: auto;
     }
-    iframe {
-        width: 500px;
-        height: 300px;
-    }
+
     .main-content{
         all: unset;
     }
@@ -90,23 +93,34 @@
         font-size: 20px
     }
 
+    .course-img{
+     height: 150px;
+        margin-bottom: 2rem;
+    }
+    .course-title {
+        padding-top: 15%
+    }
+
+     h1 {
+        font-size: 24px;
+    }
+
 
 }
 @media only screen and (max-width: 425px) {
-    iframe {
-        width: 300px;
-        height: 200px;
-    }
+
 
      input {
       font-size: 12px;
     }
-}
-
-@media only screen and (max-width: 320px) {
-    iframe {
-        width: 200px;
-        height: 200px;
+     .course-img{
+        height: 100px;
     }
-
+    .course-title {
+        padding-top: 20%
+    }
+    h1 {
+        font-size: 20px;
+    }
 }
+

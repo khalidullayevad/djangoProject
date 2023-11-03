@@ -12,6 +12,8 @@ def mainPage(request):
 
 def detailPage(request):
     return render(request, "pages/detail-page.html")
+def lessonPage(request):
+    return render(request, "pages/lesson-menu-page.html")
 
 def login(request):
     return render(request, "pages/login.html")

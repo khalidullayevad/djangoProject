@@ -25,6 +25,7 @@ from hello import views
 urlpatterns = [
     path('', views.mainPage),
     path('detail', views.detailPage),
+    path('lesson', views.lessonPage),
     path('login', views.login),
     # path('contact', views.contact),
     # path("user/<name>/<int:age>", views.user),
