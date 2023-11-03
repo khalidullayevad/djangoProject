@@ -1,0 +1,471 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+
+    section {
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .sidebar {
+       min-height: 100vh;
+       {#position: fixed;#}
+
+    }
+    .sm-desc {
+        border: 1px solid;
+        border-color: transparent;
+        {#border-color: #007bff;#}
+       box-shadow: 3px 3px #dae0e5, -1em 0 .4em #007bff;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+    }
+    span {
+        color: #007bff;
+    }
+    .content {
+        margin: 0;
+        padding: 0;
+    }
+   .course-card {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    }
+    .course-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .sidebar-icon {
+        margin-right: 15px;
+    }
+     @media only screen and (max-width: 1024px) {
+        .sidebar {
+            padding: 15px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .sidebar {
+            padding: 15px;
+        }
+        .sidebar-icon {
+        margin-right: 5px;
+        }
+        .btn {
+            font-size: 14px;
+        }
+    }
+    @media only screen and (max-width: 425px) {
+        .sidebar {
+            min-height: 50vh;
+        }
+    }
+
+
+
+
+    {#WELCOME SECTION#}
+
+    .hero-animated {
+        width: 100%;
+        min-height: 50vh;
+        background-size: cover;
+        position: relative;
+    }
+    .hero-animated h2 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 300;
+    }
+
+    .hero-animated h2 span {
+      color: #007bff;
+    }
+
+    .hero-animated p {
+      margin: 0 0 30px 0;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .hero-animated .animated {
+      margin-bottom: 60px;
+      animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    }
+
+    @media (min-width: 992px) {
+      .hero-animated .animated {
+        max-width: 45%;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hero-animated .animated {
+        max-width: 60%;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .hero-animated .animated {
+        max-width: 80%;
+      }
+    }
+
+    @keyframes up-down {
+        0% {
+            transform: translateY(10px);
+        }
+
+        100% {
+            transform: translateY(-10px);
+        }
+    }
+
+
+    .featured-services .service-item {
+      padding: 30px;
+      transition: all ease-in-out 0.4s;
+      background: #fff;
+      height: 100%;
+    }
+
+    .featured-services .service-item .icon {
+      margin-bottom: 10px;
+    }
+
+    .featured-services .service-item .icon i {
+      color: rgba(0, 123, 255, 0.78);
+      font-size: 36px;
+      transition: 0.3s;
+    }
+
+    .featured-services .service-item h4 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .featured-services .service-item h4 a {
+      color: #0d6efd;
+      transition: ease-in-out 0.3s;
+    }
+
+    .featured-services .service-item p {
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .featured-services .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 0 60px 0 rgba(72, 86, 100, 0.1);
+    }
+
+    .featured-services .service-item:hover h4 a {
+      color: #007bff;
+    }
+
+
+
+
+    .cta {
+      padding: 0;
+      margin-bottom: 60px;
+    }
+
+    .cta .container {
+      padding: 80px;
+      background: #f8f9fa!important;
+      border-radius: 15px;
+    }
+
+    @media (max-width: 992px) {
+      .cta .container {
+        padding: 60px;
+      }
+    }
+
+
+    .cta .content h3 {
+      color: #485664;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .cta .content h3 em {
+      font-style: normal;
+      position: relative;
+    }
+
+    .cta .content h3 em:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      height: 10px;
+      background: #007bff;
+      z-index: -1;
+    }
+
+    .cta .content p {
+      color: #485664;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    @media (max-width: 425px) {
+       .cta .content h3 {
+           font-size: 30px;
+       }
+       .cta .content p {
+          font-size: 14px;
+        }
+    }
+
+    .cta .img {
+      position: relative;
+    }
+
+    .cta .img:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      transform: rotate(12deg);
+    }
+
+    .cta .img:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      transform: rotate(6deg);
+    }
+
+    .cta .img img {
+      position: relative;
+      z-index: 3;
+      border-radius: 15px;
+    }
+
+
+    .about .about-img {
+      position: relative;
+      margin: 60px 0 0 60px;
+    }
+
+    .about .about-img:before {
+      position: absolute;
+      inset: -60px 0 0 -60px;
+      z-index: -1;
+      content: "";
+      background: url("{% static 'img/about-bg.png' %}") top left;
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: 575px) {
+      .about .about-img {
+        margin: 30px 0 0 30px;
+      }
+
+      .about .about-img:before {
+        inset: -30px 0 0 -30px;
+      }
+    }
+
+    .about h3 {
+      color: #485664;
+      {#font-family: var(--font-secondary);#}
+      font-weight: 300;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .about h3 {
+        font-size: 28px;
+      }
+    }
+
+    .about .tab-content h4 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 700;
+      color: #485664;
+    }
+
+    .about .tab-content i {
+      font-size: 22px;
+      line-height: 0;
+      margin-right: 8px;
+      color: #007bff;
+    }
+    .section-header {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 48px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      color: #485664;
+    }
+
+    .section-header p {
+      margin: 0 auto;
+      color: #485664;
+    }
+
+    @media (min-width: 1280px) {
+      .section-header p {
+        max-width: 80%;
+      }
+    }
+    </style>
+
+     <div class="content container-fluid">
+        <div class="row p-0 m-0">
+            <div class="sidebar bg-light col-md-2  pt-5">
+                <div class = "sm-desc">
+                    <button href="#" class="btn btn-outline-primary btn-block mb-3" disabled>Метематика</button>
+                    <p> Математика (гр. μάθημα — ғылым, білім, оқу; μαθηματικός — білуге құштарлық) —
+                        ақиқат дүниенің сандық қатынастары мен кеңістік пішіндері жайлы ғылым
+                    </p>
+                </div>
+            </div>
+            <div class = "col-md-10">
+                <section id="hero-animated" class="hero-animated d-flex align-items-center">
+                    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
+                      <img src="{% static 'img/welcome.svg' %}" class="img-fluid animated">
+                      <h2>Welcome to <span>Математика</span></h2>
+                      <p>Курс бырнарсе шырнарсе</p>
+                    </div>
+                </section>
+
+                <section id="cta" class="cta">
+                    <div class="container" data-aos="zoom-out">
+                        <div class="row g-5">
+                            <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
+                                <h3>Description <em>About</em> akla hic minima</h3>
+                                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
+                                <div class="img">
+                                    <img src="{% static 'img/desk.png' %}" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+               <section id="featured-services" class="featured-services">
+                   <div class="container">
+                    <div class="row gy-4">
+
+                      <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
+                        <div class="service-item position-relative">
+                          <div class="icon"><i class="fas fa-book sidebar-icon"></i></div>
+                          <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
+                          <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
+                        <div class="service-item position-relative">
+                          <div class="icon"><i class="fas fa-school sidebar-icon"></i></div>
+                          <h4><a href="" class="stretched-link">Sed ut perspici</a></h4>
+                          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="400">
+                        <div class="service-item position-relative">
+                          <div class="icon"><i class="fas fa-list sidebar-icon"></i> </div>
+                          <h4><a href="" class="stretched-link">Magni Dolores</a></h4>
+                          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="600">
+                        <div class="service-item position-relative">
+                          <div class="icon"><i class="fas fa-star sidebar-icon"></i></div>
+                          <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
+                          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        </div>
+                      </div>
+                    </div>
+                   </div>
+               </section>
+                <section id="about" class="about">
+                  <div class="container" data-aos="fade-up">
+
+                    <div class="section-header">
+                      <h2>About Us</h2>
+                      <p>Architecto nobis eos vel nam quidem vitae temporibus voluptates qui hic deserunt iusto omnis nam voluptas asperiores sequi tenetur dolores incidunt enim voluptatem magnam cumque fuga.</p>
+                    </div>
+
+                    <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+                      <div class="col-lg-5">
+                        <div class="about-img">
+                          <img src="{% static 'img/about.png' %}" class="img-fluid" alt="">
+                        </div>
+                      </div>
+
+                      <div class="col-lg-7">
+                        <h3 class="pt-0 pt-lg-5">Neque officiis dolore maiores et exercitationem quae est seda lidera pat claero</h3>
+
+                        <div class="tab-content">
+
+                          <div class="tab-pane fade show active" id="tab1">
+
+                            <p class="fst-italic">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+
+                            <div class="d-flex align-items-center mt-4">
+                              <i class="bi bi-check2"></i>
+                              <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
+                            </div>
+                            <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+
+                            <div class="d-flex align-items-center mt-4">
+                              <i class="bi bi-check2"></i>
+                              <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                            </div>
+                            <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+
+                            <div class="d-flex align-items-center mt-4">
+                              <i class="bi bi-check2"></i>
+                              <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
+                            </div>
+                            <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p>
+
+                          </div>
+
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+

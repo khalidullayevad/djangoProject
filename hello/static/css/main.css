@@ -1,0 +1,28 @@
+.course-card {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.course-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+.discount-price {
+    text-decoration: line-through;
+    color: #888;
+}
+.course-price {
+    font-size: 24px;
+    color: #333;
+}
+.sidebar-item {
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.sidebar-icon {
+    margin-right: 15px;
+}

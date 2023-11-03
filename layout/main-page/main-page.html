@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .course-card {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .course-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .discount-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .course-price {
+            font-size: 24px;
+            color: #333;
+        }
+        .navbar {
+            padding: 20px 50px;
+        }
+        .sidebar-item {
+            margin-bottom: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .sidebar-icon {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><i class="fab fa-neos"></i> Math</a>
+        <div class="ml-auto d-flex align-items-center">
+            <h4 class="mr-4">Курсы</h4>
+            <button class="btn btn-outline-primary mr-2">Мой профиль</button>
+            <!-- Add other icons and dropdown as per the design -->
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="sidebar-item"><i class="fas fa-book sidebar-icon"></i> Все курсы</div>
+                <div class="sidebar-item"><i class="fas fa-school sidebar-icon"></i> УБТ</div>
+                <div class="sidebar-item"><i class="fas fa-star sidebar-icon"></i> Рейтинг</div>
+                <div class="sidebar-item"><i class="fas fa-list sidebar-icon"></i> Жанлыктар</div>
+            </div>
+
+            <!-- Courses -->
+            <div class="col-md-4">
+                <!-- Example Course Card -->
+                <div class="course-card">
+                    <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="Course Image">
+                    <h4 class="mt-3">Математика онлайн курсы</h4>
+                    <p class="course-price">55,000₸ <span class="discount-price">75,000₸</span></p>
+                    <button class="btn btn-primary">Купить</button>
+                </div>
+                <!-- Duplicate the course-card div for other courses -->
+            </div>
+            <!-- Courses -->
+            <div class="col-md-4">
+                <!-- Example Course Card -->
+                <div class="course-card">
+                    <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="Course Image">
+                    <h4 class="mt-3">Математика онлайн курсы</h4>
+                    <p class="course-price">55,000₸ <span class="discount-price">75,000₸</span></p>
+                    <button class="btn btn-primary">Купить</button>
+                </div>
+                <!-- Duplicate the course-card div for other courses -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and Font Awesome JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

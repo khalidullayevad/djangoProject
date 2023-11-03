@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Lesson Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #e5e5e5 url('placeholder-video.jpg') center center no-repeat; /* Placeholder image */
+        }
+        .video-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row p-3">
+        <div class="col-2">
+            <!-- Left side -->
+            <a href="#" class="btn btn-light btn-block mb-3">Назад</a>
+        </div>
+
+        <div class="col-10">
+            <!-- Main Content -->
+            <h1>15 из 16 2 - 5.3 сабак. Тотығу - тотықсыздану реакциялары</h1>
+            <a href="#">Программа курса</a>
+
+            <!-- Video Section -->
+            <div class="video-container mt-4">
+                <div class="video"></div>
+                <div class="video-controls">
+                    <button class="btn btn-light">⏪</button>
+                    <button class="btn btn-primary">▶️</button>
+                    <button class="btn btn-light">⏩</button>
+                    <span>-13:09</span>
+                    <div class="volume-controls">
+                        <button class="btn btn-light">🔈</button>
+                        <input type="range">
+                    </div>
+                    <button class="btn btn-light">📺</button>
+                </div>
+            </div>
+
+            <!-- Comment Section -->
+            <div class="mt-4">
+                <h3>Комментарии</h3>
+                <textarea class="form-control" rows="3"></textarea>
+                <button class="btn btn-primary mt-3">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
