@@ -12,43 +12,64 @@
     }
 
     .nav__links a,
-    .cta,
+    .cta-nav,
     .overlay__content a {
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
       color: #000;
       text-decoration: none;
+        font-size: 20px;
+    }
+    .nav__links a,
+    .cta-nav
+    {
+     padding: 9px 25px;
+      {#background-color: #007bff;#}
+        color: #000;
+      border: solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease 0s;
     }
 
     .nav__links {
       list-style: none;
       display: flex;
+        margin-bottom: 0;
     }
 
     .nav__links li {
       padding: 0px 20px;
     }
-
-    .nav__links li a {
-       transition: color 0.3s ease 0s;
-        {#border: solid #ddd;#}
+    .nav__links ul {
+      margin-bottom: 0;
     }
 
-    .nav__links li a:hover {
-      color: #007bff;
-    }
+    {#.nav__links li a {#}
+    {#   transition: color 0.3s ease 0s;#}
+    {##}
+    {#}#}
 
-    .cta-nav {
-      padding: 9px 25px;
+    {#.nav__links li a:hover {#}
+    {#  color: #007bff;#}
+    {#}#}
+
+    {#.cta-nav {#}
+    {#  padding: 9px 25px;#}
       {#background-color: #007bff;#}
-      border: solid #ddd;
-      {#border-radius: 50px;#}
-      cursor: pointer;
-      transition: background-color 0.3s ease 0s;
-    }
+    {#    color: #000;#}
+    {#  border: solid #ddd;#}
+    {#  border-radius: 5px;#}
+    {#  cursor: pointer;#}
+    {#  transition: background-color 0.3s ease 0s;#}
+    {#}#}
 
-    .cta-nav :hover {
+    .cta-nav:hover,
+    .nav__links li a:hover{
       background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-color: transparent;
     }
 
     /* Mobile Nav */
@@ -128,7 +149,7 @@
 
 <header>
 
-<a class="logo" href="/"><i class="fab fa-neos"></i> Math</a>
+    <a class="logo" href="/"><i class="fab fa-neos"></i> Math</a>
     <nav>
         <ul class="nav__links">
             <li><a href="#course">Курсы</a></li>
@@ -138,7 +159,8 @@
     </nav>
     <a class="cta-nav " href="/login">Логин</a>
     <div class="menu cta-nav">
-        <i class="fa fa-bars"></i></div>
+        <i class="fa fa-bars"></i>
+    </div>
 </header>
 <div class="overlay">
 
