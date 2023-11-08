@@ -2,6 +2,26 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/detail-page.css' %}">
+    <style>
+    .play-btn, .pause-btn {
+        float: left;
+        border: none;
+        background: transparent;
+        color: #000;
+    }
+    {#.action {#}
+    {#    margin-top: -30px;#}
+    {#}#}
+    .pause-btn {
+        display: none;
+    }
+    {##YouTube-player-progress {#}
+    {#    width: 650px;#}
+    {#    height: 6px;#}
+    {#    background-color: #444444;#}
+    {#}#}
+
+    </style>
     <div class="container-fluid">
         <div class="main-content">
             <div class="left-menu ">
@@ -31,12 +51,17 @@
                     <div style="position: absolute; height: 60px; top: 0; z-index: 20; width: 100%;"></div>
                     <div style="position: absolute; height: 60px; bottom: 0; z-index: 20; width: 100%;"></div>
                 </div>
-                <button onclick="startVideo()">Start video</button>
-                <button onclick="pauseVideo()">Stop video</button>
-                <input id="YouTube-player-volume" type="range" value="100" min="0" max= "100"
-                       onchange="volumeChange(this.value)">
-                <input id="YouTube-player-progress" type="range" value="0" min="0" max="100"
-                       onchange="youTubePlayerCurrentTimechange(this.value);" oninput="youTubePlayercurrentTimeslide()">
+                <div class="action">
+                    <button class="play-btn" onclick="startVideo()" id = "start-video"><i class="fa fa-play"></i></button>
+                    <button class="pause-btn" onclick="pauseVideo()" id = "pause-video"><i class="fa fa-pause"></i></button>
+    {#                <button class="play-btn" disabled><i class="fa fa-volume"></i></button>#}
+
+                    <input id="YouTube-player-volume" type="range" value="100" min="0" max= "100"
+                           onchange="volumeChange(this.value)">
+                        <input id="YouTube-player-progress"  type="range" value="0" min="0" max="100"
+                               onchange="youTubePlayerCurrentTimechange(this.value);" oninput="youTubePlayercurrentTimeslide()">
+                </div>
+
                 <br>
                 <h2>Description</h2>
                 <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -44,10 +69,6 @@
                 <!-- Comment Section -->
                 <div class="mt-4">
                    <iframe src="{% static 'file/MathByBekbolat.pdf' %}" width="600" height="400"></iframe>
-
-                    <h3>Комментарии</h3>
-                    <textarea class="form-control" rows="3"></textarea>
-                    <button class="btn btn-primary mt-3">Отправить</button>
                 </div>
             </div>
         </div>
@@ -118,10 +139,15 @@
 
       function pauseVideo() {
         player.pauseVideo();
+        document.getElementById("start-video").style.display = "block";
+        document.getElementById("pause-video").style.display = "none";
       }
 
       function startVideo() {
-        player.playVideo();
+           player.playVideo();
+          document.getElementById("pause-video").style.display = "block";
+          document.getElementById("start-video").style.display = "none";
+
       }
 
       function volumeChange(volume){
@@ -129,7 +155,6 @@
       }
 
       function youTubePlayerCurrentTimechange(currentTime){
-        console.log("HEEEERREEEE")
         player.currentTimeSliding = false;
         player.seekTo(currentTime *player.getDuration()/100, true);
       }
