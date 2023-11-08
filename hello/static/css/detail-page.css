@@ -37,6 +37,18 @@ iframe {
     width: 1000px;
     height: 700px;
 }
+.play-btn, .pause-btn, .volume-up-btn, .volume-off-btn {
+    float: left;
+    border: none;
+    background: transparent;
+    color: #000;
+}
+.pause-btn {
+    display: none;
+}
+.volume-off-btn {
+    display: none;
+}
 
 
 
