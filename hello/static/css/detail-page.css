@@ -17,19 +17,20 @@
     display: none;
 }
 .lessons {
-    margin: 2rem;
-    background:  rgb(248, 249,250);
-    padding: 1rem;
-    border: 1px solid ;
-    border-radius: 10px;
-    border-color: #CBC8C8;
+    color: #000;
+    /*margin: 2rem;*/
+    /*background:  rgb(248, 249,250);*/
+    /*padding: 1rem;*/
+    /*!*border: 1px solid ;*!*/
+    /*border-radius: 10px;*/
+    /*!*border-color: #CBC8C8;*!*/
 }
 .lessons a {
    padding-left: 2rem;
 }
 .lesson-name {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns:  auto;
 }
 
 iframe {
