@@ -2,6 +2,50 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/detail-page.css' %}">
+    <style>
+    .action {
+        display: grid;
+    }
+
+                .range, .range-volume {
+                    {#width: 1000px;#}
+                    {#height: 15px;#}
+                    appearance: none;
+                    background: #edf1f4;
+                    outline: none;
+                    border-radius: 15px;
+                    overflow: hidden;
+                }
+                .range {
+                     width: 1000px;
+                    height: 15px;
+                }
+
+                .range-volume {
+                      width: 150px;
+                    height: 10px;
+                }
+
+
+                .range::-webkit-slider-thumb , .range-volume::-webkit-slider-thumb {
+                    appearance: none;
+                    {#width: 15px;#}
+                    {#height: 15px;#}
+                    background: #fff;
+                    border-radius: 50%;
+                    border: 2px solid #007bff;
+                    box-shadow: -1007px 0 0 1000px #007bff;
+                    cursor: pointer;
+                }
+                 .range::-webkit-slider-thumb {
+                      width: 15px;
+                    height: 15px;
+                 }
+                 .range-volume::-webkit-slider-thumb {
+                      width: 10px;
+                    height: 10px;
+                 }
+    </style>
     <div class="container-fluid">
         <div class="main-content">
             <div class="left-menu ">
@@ -30,20 +74,26 @@
                 <div style="position: relative;">
                     <div id="player"></div>
                     <div style="position: absolute; height: 60px; top: 0; z-index: 20; width: 100%;"></div>
-                    <div style="sposition: absolute; height: 60px; bottom: 0; z-index: 20; width: 100%;"></div>
+                    <div style="position: absolute; height: 60px; bottom: 0; z-index: 20; width: 100%;"></div>
                 </div>
                 <div class="action">
-                    <button class="play-btn" onclick="startVideo()" id = "start-video"><i class="fa fa-play"></i></button>
-                    <button class="pause-btn" onclick="pauseVideo()" id = "pause-video"><i class="fa fa-pause"></i></button>
+                    <div class = "range_box">
+                        <input class="range" id="YouTube-player-progress"  type="range" value="0" min="0" max="100"
+                                   onchange="youTubePlayerCurrentTimechange(this.value);" oninput="youTubePlayercurrentTimeslide()">
 
-                    <button class="volume-up-btn"  onclick="volumeOffD()" id = "volume-up"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-                    <button class="volume-off-btn"  onclick="volumeUp()" id = "volume-off"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="">
+                        <button class="play-btn" onclick="startVideo()" id = "start-video"><i class="fa fa-play"></i></button>
+                        <button class="pause-btn" onclick="pauseVideo()" id = "pause-video"><i class="fa fa-pause"></i></button>
 
-                    <input id="YouTube-player-volume" type="range" value="100" min="0" max= "100"
-                           onchange="volumeChange(this.value)">
-                    <input id="YouTube-player-progress"  type="range" value="0" min="0" max="100"
-                               onchange="youTubePlayerCurrentTimechange(this.value);" oninput="youTubePlayercurrentTimeslide()">
-                    <span id="current-time-display">00:00</span>
+                        <button class="volume-up-btn"  onclick="volumeOffD()" id = "volume-up"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+                        <button class="volume-off-btn"  onclick="volumeUp()" id = "volume-off"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+
+                        <input id="YouTube-player-volume" type="range" class = "range-volume" value="100" min="0" max= "100"
+                               onchange="volumeChange(this.value)">
+                        <span class="rangeValue" id="current-time-display">00:00</span>/<span class="rangeValue" id="duration-time-display">00:00</span>
+                    </div>
+
                 </div>
 
                 <br>
@@ -109,8 +159,10 @@
          function onPlayerReady(event) {
         // event.target.playVideo();
             var progressInput = document.getElementById('YouTube-player-progress');
+            durationTimeDisplay();
             progressInput.addEventListener('input', function () {
               var duration = player.getDuration();
+              {#console.log(duration)#}
               var newTime = progressInput.value * duration / 100;
               player.seekTo(newTime);
               updateCurrentTimeDisplay(newTime);
@@ -131,6 +183,14 @@
             updateCurrentTimeDisplay(currentTime);
           }, 1000);
         }
+      }
+
+      function durationTimeDisplay() {
+          var minutes = Math.floor(player.getDuration() / 60);
+        var seconds = Math.floor(player.getDuration() % 60);
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        document.getElementById('duration-time-display').textContent = minutes + ':' + seconds;
       }
 
        function updateCurrentTimeDisplay(time) {

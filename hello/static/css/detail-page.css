@@ -16,6 +16,44 @@
 .up-down {
     display: none;
 }
+ .action {
+        display: grid;
+    }
+
+.range, .range-volume {
+    appearance: none;
+    background: #edf1f4;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.range {
+     width: 1000px;
+    height: 15px;
+}
+
+.range-volume {
+      width: 150px;
+    height: 10px;
+}
+
+
+.range::-webkit-slider-thumb , .range-volume::-webkit-slider-thumb {
+    appearance: none;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    box-shadow: -1007px 0 0 1000px #007bff;
+    cursor: pointer;
+}
+ .range::-webkit-slider-thumb {
+      width: 15px;
+    height: 15px;
+ }
+ .range-volume::-webkit-slider-thumb {
+     width: 10px;
+    height: 10px;
+ }
 .lessons {
     color: #000;
     /*margin: 2rem;*/
@@ -57,6 +95,9 @@ iframe {
         width: 700px;
         height: 400px;
     }
+    .range {
+         width: 700px;
+     }
     .main-content{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -92,6 +133,9 @@ iframe {
         width: 500px;
         height: 300px;
     }
+    .range {
+         width: 500px;
+     }
     .main-content{
         all: unset;
     }
@@ -110,6 +154,9 @@ iframe {
         width: 300px;
         height: 200px;
     }
+    .range {
+         width: 300px;
+     }
 
      input {
       font-size: 12px;
@@ -121,5 +168,8 @@ iframe {
         width: 200px;
         height: 200px;
     }
+    .range {
+         width: 200px;
+     }
 
 }
