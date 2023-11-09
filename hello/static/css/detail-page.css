@@ -56,14 +56,9 @@
  }
 .lessons {
     color: #000;
-    /*margin: 2rem;*/
-    /*background:  rgb(248, 249,250);*/
-    /*padding: 1rem;*/
-    /*!*border: 1px solid ;*!*/
-    /*border-radius: 10px;*/
-    /*!*border-color: #CBC8C8;*!*/
 }
 .lessons a {
+    color: #000;
    padding-left: 2rem;
 }
 .lesson-name {

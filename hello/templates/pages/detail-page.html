@@ -3,54 +3,32 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/detail-page.css' %}">
     <style>
-    .action {
-        display: grid;
+    .lessons {
+        color: #000;
+    }
+    .course-title {
+        align-items: center;
     }
 
-                .range, .range-volume {
-                    {#width: 1000px;#}
-                    {#height: 15px;#}
-                    appearance: none;
-                    background: #edf1f4;
-                    outline: none;
-                    border-radius: 15px;
-                    overflow: hidden;
-                }
-                .range {
-                     width: 1000px;
-                    height: 15px;
-                }
+    .lesson-name {
+        margin-top: 1rem;
+    }
+    .lesson-name a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: solid rgb(248, 249,250);
+        {#height: 20px;#}
+    }
+      .lesson-name a:hover {
+         background: rgb(248, 249,250);
+    }
 
-                .range-volume {
-                      width: 150px;
-                    height: 10px;
-                }
-
-
-                .range::-webkit-slider-thumb , .range-volume::-webkit-slider-thumb {
-                    appearance: none;
-                    {#width: 15px;#}
-                    {#height: 15px;#}
-                    background: #fff;
-                    border-radius: 50%;
-                    border: 2px solid #007bff;
-                    box-shadow: -1007px 0 0 1000px #007bff;
-                    cursor: pointer;
-                }
-                 .range::-webkit-slider-thumb {
-                      width: 15px;
-                    height: 15px;
-                 }
-                 .range-volume::-webkit-slider-thumb {
-                      width: 10px;
-                    height: 10px;
-                 }
     </style>
     <div class="container-fluid">
         <div class="main-content">
             <div class="left-menu ">
                 <div class="lessons">
-                    <a href="#" class="btn btn-outline-primary btn-block mb-3" disabled>Метематика</a>
+                    <a href="#" class="course-title text-center"><h3>Метематика</h3></a>
                     <a   class="up-down" onclick="upDown()" > Список уроков <i class="fa fa-chevron-down" id = "icon"></i></a>
                     <div class="lesson-name" id="lessonsName">
                         <a href="#" > Урок 1 <i class="fa fa-check" aria-hidden="true" style="color: green; margin-left: 1rem; "></i></a>
